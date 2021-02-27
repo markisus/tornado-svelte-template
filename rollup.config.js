@@ -17,7 +17,7 @@ function serve() {
 	return {
 		writeBundle() {
 			if (server) return;
-			server = require('child_process').spawn('python', ['-m', 'tornado.autoreload', 'server.py'], {
+			server = require('child_process').spawn('python', ['server.py', '--autoreload'], {
 				stdio: ['inherit', 'inherit', 'inherit'],
 				shell: true
 			});
